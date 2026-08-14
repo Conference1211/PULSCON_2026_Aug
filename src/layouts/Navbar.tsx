@@ -21,7 +21,6 @@ import { cn } from "@/lib/utils";
 const MAIN_LINKS = [
   { label: "Home", to: "/" },
   { label: "About", to: "/about" },
-  { label: "Journals", to: "/journals" },
   { label: "Submit Abstract", to: "/submit-abstract" },
   { label: "Contact", to: "/contact" },
 ] as const;
@@ -294,30 +293,7 @@ export function Navbar() {
               </AnimatePresence>
             </div>
 
-            {/* JOURNALS */}
-            <Link
-              to="/journals"
-              className={cn(
-                "relative rounded-full px-3 py-2 text-[13px] font-medium transition-colors",
-                pathname.startsWith("/journals")
-                  ? "text-foreground"
-                  : "text-muted-foreground hover:text-foreground",
-              )}
-            >
-              Journals
-
-              {pathname.startsWith("/journals") ? (
-                <motion.span
-                  layoutId="nav-pill"
-                  className="absolute inset-0 -z-10 rounded-full bg-muted/80"
-                  transition={{
-                    type: "spring",
-                    stiffness: 340,
-                    damping: 30,
-                  }}
-                />
-              ) : null}
-            </Link>
+            
 
             {/* PROGRAMME DROPDOWN */}
             <div
@@ -619,18 +595,7 @@ export function Navbar() {
                 </AnimatePresence>
               </div>
 
-              {/* JOURNALS */}
-              <Link
-                to="/journals"
-                className={cn(
-                  "rounded-2xl px-4 py-3 font-heading text-xl transition-colors",
-                  pathname.startsWith("/journals")
-                    ? "bg-muted/70 text-foreground"
-                    : "text-foreground/80 hover:bg-muted/70 hover:text-foreground",
-                )}
-              >
-                Journals
-              </Link>
+             
 
               {/* MOBILE PROGRAMME */}
               <div>
