@@ -6,7 +6,6 @@ import { ContactForm, Newsletter } from "@/components/forms";
 import { CONFERENCE } from "@/constants/conference";
 
 const DETAILS = [
-  { icon: MapPin, title: "Office", body: CONFERENCE.address },
   { icon: Mail, title: "Email", body: CONFERENCE.email },
   { icon: Phone, title: "Phone", body: CONFERENCE.phone },
   { icon: Clock, title: "Hours", body: "Mon–Fri, 09:00–18:00 CET" },
