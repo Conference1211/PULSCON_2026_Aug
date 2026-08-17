@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import { RootLayout, NotFound, ErrorBoundary } from "@/layouts/RootLayout";
+
 import Home from "@/pages/Home";
 import About from "@/pages/About";
 import Speakers from "@/pages/Speakers";
@@ -11,6 +12,9 @@ import SubmitAbstract from "@/pages/SubmitAbstract";
 import FAQ from "@/pages/FAQ";
 import Contact from "@/pages/Contact";
 
+import UpcomingConferences from "@/pages/UpcomingConferences";
+import PreviousConferences from "@/pages/PreviousConferences";
+
 export default function App() {
   return (
     <ErrorBoundary>
@@ -18,6 +22,18 @@ export default function App() {
         <Route element={<RootLayout />}>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+
+          {/* Conferences */}
+          <Route
+            path="/conferences/upcoming"
+            element={<UpcomingConferences />}
+          />
+
+          <Route
+            path="/conferences/previous"
+            element={<PreviousConferences />}
+          />
+
           <Route path="/speakers" element={<Speakers />} />
           <Route path="/tracks" element={<Tracks />} />
           <Route path="/schedule" element={<Schedule />} />
@@ -26,6 +42,7 @@ export default function App() {
           <Route path="/submit-abstract" element={<SubmitAbstract />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/contact" element={<Contact />} />
+
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

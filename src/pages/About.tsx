@@ -1,6 +1,6 @@
 import { Helmet } from "@/components/Seo";
 import { PageHero } from "@/components/sections/Hero";
-import aboutHealthcareImage from "@/assets/about-healthcare.png";
+import aboutHealthcareVideo from "@/assets/about.webm";
 import {
   Section,
   Heading,
@@ -80,44 +80,42 @@ export default function About() {
     body={`${CONFERENCE.name} brings together healthcare professionals, researchers, clinicians, innovators and institutions to exchange knowledge, explore emerging developments and build meaningful connections that can help shape the future of medicine.`}
   />
 
-  {/* About Healthcare Visual */}
-  <img
-  src={aboutHealthcareImage}
-  alt="Healthcare innovation and global medical collaboration"
-  className="
-    pointer-events-none
-    absolute
-    object-contain
+  {/* About Healthcare Video */}
+  <video
+    src={aboutHealthcareVideo}
+    autoPlay
+    muted
+    loop
+    playsInline
+    className="
+      pointer-events-none
+      absolute
+      object-contain
 
-    /* MOBILE */
-    right-0
-    bottom-[-140px]
-    w-[170px]
+      right-0
+      bottom-[-140px]
+      w-[170px]
 
-    /* SMALL TABLET */
-    sm:right-8
-    sm:bottom-[-100px]
-    sm:w-[210px]
+      sm:right-8
+      sm:bottom-[-100px]
+      sm:w-[210px]
 
-    /* TABLET */
-    md:right-8
-    md:bottom-auto
-    md:top-[68%]
-    md:w-[280px]
+      md:right-8
+      md:bottom-auto
+      md:top-[68%]
+      md:w-[280px]
 
-    /* DESKTOP */
-lg:right-[8%]
-lg:top-[56%]
-lg:w-[540px]
+      lg:right-[8%]
+      lg:top-[56%]
+      lg:w-[540px]
 
-/* LARGE DESKTOP */
-xl:right-[6%]
-xl:top-[57%]
-xl:w-[620px]
+      xl:right-[6%]
+      xl:top-[57%]
+      xl:w-[620px]
 
-    -translate-y-1/2
-  "
-/>
+      -translate-y-1/2
+    "
+  />
 </div>
 
       {/* OUR MISSION */}

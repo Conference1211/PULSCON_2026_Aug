@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 
 import { PageHero } from "@/components/sections/Hero";
-import abstractImage from "@/assets/abstract-image1.png";
+import abstractVideo from "@/assets/abstract.webm";
 
 import {
   Section,
@@ -596,44 +596,49 @@ export default function SubmitAbstract() {
         />
 
         {/* HERO IMAGE */}
-        <img
-          src={abstractImage}
-          alt="Medical research and abstract submission"
-          className="
-            pointer-events-none
-            absolute
-            z-10
-            object-contain
+        {/* HERO VIDEO */}
+<video
+  src={abstractVideo}
+  autoPlay
+  loop
+  muted
+  playsInline
+  aria-label="Medical research and abstract submission"
+  className="
+    pointer-events-none
+    absolute
+    z-10
+    object-contain
 
-            /* MOBILE */
-            right-0
-            bottom-[-130px]
-            w-[200px]
+    /* MOBILE */
+    right-0
+    bottom-[-130px]
+    w-[200px]
 
-            /* SMALL TABLET */
-            sm:right-[-20px]
-            sm:bottom-[-110px]
-            sm:w-[300px]
+    /* SMALL TABLET */
+    sm:right-[-20px]
+    sm:bottom-[-110px]
+    sm:w-[300px]
 
-            /* TABLET */
-            md:right-[-10px]
-            md:bottom-auto
-            md:top-[68%]
-            md:w-[390px]
+    /* TABLET */
+    md:right-[-10px]
+    md:bottom-auto
+    md:top-[68%]
+    md:w-[390px]
 
-            /* DESKTOP */
-            lg:right-[4%]
-            lg:top-[55%]
-            lg:w-[500px]
+    /* DESKTOP */
+    lg:right-[4%]
+    lg:top-[55%]
+    lg:w-[500px]
 
-            /* LARGE DESKTOP */
-            xl:right-[5%]
-            xl:top-[55%]
-            xl:w-[570px]
+    /* LARGE DESKTOP */
+    xl:right-[5%]
+    xl:top-[55%]
+    xl:w-[570px]
 
-            -translate-y-1/2
-          "
-        />
+    -translate-y-1/2
+  "
+/>
       </div>
 
       {/* =====================================================
