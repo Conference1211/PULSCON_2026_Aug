@@ -1,6 +1,9 @@
 import { Helmet } from "@/components/Seo";
 import { PageHero } from "@/components/sections/Hero";
+import { Link } from "react-router-dom";
 import previousConferencesImage from "@/assets/previous-conferences.png";
+import InfectiousDiseases from "@/pages/InfectiousDiseases";
+import NeurologyNeuroscience from "@/pages/NeurologyNeuroscience";
 import {
   Section,
   Heading,
@@ -14,6 +17,7 @@ import { ArrowUpRight, CalendarDays } from "lucide-react";
 
 const PREVIOUS_CONFERENCES = [
   {
+    slug: "international-congress-on-infectious-diseases",
     title: "International Congress on Infectious Diseases",
     year: "2026",
     date: "Aug 13–14, 2026",
@@ -22,6 +26,7 @@ const PREVIOUS_CONFERENCES = [
       "https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?auto=format&fit=crop&w=1400&q=85",
   },
   {
+    slug: "world-conference-on-neurology-and-neuroscience",
     title: "World Conference on Neurology and Neuroscience",
     year: "2026",
     date: "May 18–19, 2026",
@@ -30,6 +35,7 @@ const PREVIOUS_CONFERENCES = [
       "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=1400&q=85",
   },
   {
+    slug: "international-conference-on-copd-and-lung-health",
     title: "International Conference on COPD and Lung Health",
     year: "2026",
     date: "April 6–7, 2026",
@@ -38,6 +44,7 @@ const PREVIOUS_CONFERENCES = [
       "https://images.unsplash.com/photo-1584362917165-526a968579e8?auto=format&fit=crop&w=1400&q=85",
   },
   {
+    slug: "world-health-congress-women-health-gynecology",
     title: "World Health Congress on Women Health and Gynecology",
     year: "2026",
     date: "Feb 24–25, 2026",
@@ -46,6 +53,7 @@ const PREVIOUS_CONFERENCES = [
       "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1400&q=85",
   },
   {
+    slug: "global-summit-nanoscience-nanotechnology",
     title: "Global Summit on Nanoscience and Nanotechnology",
     year: "2025",
     date: "Nov 24–25, 2025",
@@ -360,7 +368,11 @@ export default function PreviousConferences() {
         <Stagger className="mt-14 grid gap-7 md:grid-cols-2 xl:grid-cols-3">
           {PREVIOUS_CONFERENCES.map((conference) => (
             <StaggerItem key={`${conference.title}-${conference.year}`}>
-              <Card className="group overflow-hidden p-0 transition-all duration-500 hover:-translate-y-1">
+  <Link
+    to={`/previous-conferences/${conference.slug}`}
+    className="block"
+  >
+    <Card className="group overflow-hidden p-0 transition-all duration-500 hover:-translate-y-1">
                 {/* IMAGE */}
                 <div className="relative aspect-[16/10] overflow-hidden">
                   <img
@@ -416,6 +428,7 @@ export default function PreviousConferences() {
   </span>
 </div>
               </Card>
+              </Link>
             </StaggerItem>
           ))}
         </Stagger>

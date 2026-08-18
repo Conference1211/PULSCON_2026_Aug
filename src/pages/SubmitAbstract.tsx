@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 
 import { PageHero } from "@/components/sections/Hero";
-import abstractVideo from "@/assets/abstract.webm";
+import abstractVideo from "@/assets/abstract2.webm";
 
 import {
   Section,
@@ -33,7 +33,7 @@ import {
 import { cn } from "@/lib/utils";
 
 const field =
-  "w-full rounded-xl border border-border/70 bg-background/70 px-4 py-3 text-sm outline-none transition-all placeholder:text-muted-foreground/60 focus:border-primary/60 focus:ring-2 focus:ring-primary/10";
+  "w-full rounded-xl border border-[#CBD5E1] bg-white px-4 py-3 text-sm font-medium text-[#07111F] outline-none transition-all placeholder:text-[#64748B] shadow-sm focus:border-[#0B5ED7] focus:ring-2 focus:ring-[#0B5ED7]/10";
 
 /* =========================================================
    ABSTRACT FORM
@@ -59,7 +59,8 @@ function AbstractForm() {
         rounded-[28px]
         border
         border-border
-        bg-white
+        bg-[#F8FAFC]
+        border-[#D8E5F7]
         p-6
         shadow-[0_20px_60px_-20px_rgba(7,17,31,0.18)]
         ring-1
@@ -103,10 +104,10 @@ function AbstractForm() {
         </div>
 
         {/* DOWNLOAD TEMPLATE */}
-        <div className="mt-6 flex flex-wrap items-center justify-between gap-3 rounded-xl border border-border/60 bg-muted/30 px-4 py-3">
-          <span className="text-sm text-muted-foreground">
-            Download Abstract template here
-          </span>
+        <div className="mt-6 flex flex-wrap items-center justify-between gap-3 rounded-xl border border-[#0B5ED7]/15 bg-[#F8FAFC] px-4 py-3">
+          <span className="text-sm font-medium text-[#07111F]">
+  Download Abstract template here
+</span>
 
           <button
             type="button"
@@ -339,7 +340,7 @@ function AbstractForm() {
               border
               border-dashed
               border-border/80
-              bg-muted/20
+              bg-[#F1F6FF]
               px-5
               py-5
               transition-all
@@ -386,41 +387,7 @@ function AbstractForm() {
           </label>
         </div>
 
-        {/* CAPTCHA */}
-        <div className="sm:col-span-2">
-          <div className="flex flex-wrap items-center gap-3 rounded-xl border border-border/60 bg-muted/20 p-4">
-            <div className="rounded-lg border border-border bg-background px-5 py-3 font-mono text-lg font-semibold tracking-[0.25em] text-muted-foreground line-through">
-              PUL5C
-            </div>
-
-            <button
-              type="button"
-              aria-label="Refresh verification code"
-              className="
-                grid
-                h-10
-                w-10
-                place-items-center
-                rounded-lg
-                border
-                border-border
-                bg-background
-                text-muted-foreground
-                transition-colors
-                hover:text-primary
-              "
-            >
-              ↻
-            </button>
-
-            <input
-              required
-              name="captcha"
-              placeholder="Enter code"
-              className={cn(field, "w-full sm:w-40")}
-            />
-          </div>
-        </div>
+      
 
         {/* CONSENT */}
         <label className="flex items-start gap-3 text-sm text-muted-foreground sm:col-span-2">
@@ -487,6 +454,7 @@ function SubmissionInstructions() {
           border
           border-border
           bg-white
+          border-[#E2E8F0]
           p-6
           shadow-[0_20px_60px_-25px_rgba(7,17,31,0.14)]
           ring-1
@@ -500,7 +468,7 @@ function SubmissionInstructions() {
           Before you submit
         </h2>
 
-        <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+        <p className="mt-3 text-sm leading-relaxed text-[#07111F]">
           Please review these requirements carefully before completing the
           submission form.
         </p>
@@ -645,7 +613,7 @@ export default function SubmitAbstract() {
           SUBMISSION SECTION
       ===================================================== */}
 
-      <Section className="pt-10 lg:pt-14">
+      <Section className="pt-16 lg:pt-20">
         <div className="grid items-start gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-12">
 
           {/* LEFT — FORM */}

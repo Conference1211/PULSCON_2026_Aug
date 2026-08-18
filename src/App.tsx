@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import { RootLayout, NotFound, ErrorBoundary } from "@/layouts/RootLayout";
+import ScrollToTop from "@/components/ScrollToTop";
 
 import Home from "@/pages/Home";
 import About from "@/pages/About";
@@ -15,15 +16,26 @@ import Contact from "@/pages/Contact";
 import UpcomingConferences from "@/pages/UpcomingConferences";
 import PreviousConferences from "@/pages/PreviousConferences";
 
+import InfectiousDiseases from "@/pages/InfectiousDiseases";
+import NeurologyNeuroscience from "@/pages/NeurologyNeuroscience";
+import COPDAndLungHealth from "@/pages/COPDAndLungHealth";
+import WomenHealthGynecology from "@/pages/WomenHealthGynecology";
+import NanoscienceNanotechnology from "@/pages/NanoscienceNanotechnology";
+
 export default function App() {
   return (
     <ErrorBoundary>
+      <ScrollToTop />
+
       <Routes>
         <Route element={<RootLayout />}>
+
           <Route path="/" element={<Home />} />
+
           <Route path="/about" element={<About />} />
 
           {/* Conferences */}
+
           <Route
             path="/conferences/upcoming"
             element={<UpcomingConferences />}
@@ -34,6 +46,35 @@ export default function App() {
             element={<PreviousConferences />}
           />
 
+          {/* Previous Conference Details */}
+
+          <Route
+            path="/previous-conferences/international-congress-on-infectious-diseases"
+            element={<InfectiousDiseases />}
+          />
+
+          <Route
+            path="/previous-conferences/world-conference-on-neurology-and-neuroscience"
+            element={<NeurologyNeuroscience />}
+          />
+
+          <Route
+            path="/previous-conferences/international-conference-on-copd-and-lung-health"
+            element={<COPDAndLungHealth />}
+          />
+
+          <Route
+            path="/previous-conferences/world-health-congress-women-health-gynecology"
+            element={<WomenHealthGynecology />}
+          />
+
+          <Route
+            path="/previous-conferences/global-summit-nanoscience-nanotechnology"
+            element={<NanoscienceNanotechnology />}
+          />
+
+          {/* Main Pages */}
+
           <Route path="/speakers" element={<Speakers />} />
           <Route path="/tracks" element={<Tracks />} />
           <Route path="/schedule" element={<Schedule />} />
@@ -43,7 +84,10 @@ export default function App() {
           <Route path="/faq" element={<FAQ />} />
           <Route path="/contact" element={<Contact />} />
 
+          {/* 404 */}
+
           <Route path="*" element={<NotFound />} />
+
         </Route>
       </Routes>
     </ErrorBoundary>
