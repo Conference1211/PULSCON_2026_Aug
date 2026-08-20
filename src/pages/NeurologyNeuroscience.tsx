@@ -108,15 +108,15 @@ export default function NeurologyNeuroscience() {
   className="aspect-[16/10] w-full rounded-xl object-cover"
 />
 
-            <div className="absolute inset-x-2 bottom-2 rounded-b-xl bg-gradient-to-t from-background/95 via-background/50 to-transparent p-5 pt-12">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-gold">
-                {CONFERENCE.edition}
-              </p>
+            <div className="absolute inset-x-2 bottom-2 rounded-b-xl bg-gradient-to-t from-black/80 via-black/40 to-transparent p-5 pt-12">
+  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-gold">
+    {CONFERENCE.edition}
+  </p>
 
-              <p className="mt-1 text-sm font-medium text-white">
-                PulseCon Global · {CONFERENCE.year}
-              </p>
-            </div>
+  <p className="mt-1 text-sm font-medium text-white">
+    PulseCon Global · {CONFERENCE.year}
+  </p>
+</div>
           </div>
         </div>
       </div>
@@ -310,7 +310,7 @@ export default function NeurologyNeuroscience() {
                 loading="lazy"
               />
 
-              <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 
               <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
                 <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-gold">

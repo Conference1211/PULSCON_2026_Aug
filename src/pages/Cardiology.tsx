@@ -7,6 +7,7 @@ import {
   Reveal,
   ButtonLink,
 } from "@/components/ui-kit";
+
 import {
   ArrowLeft,
   ArrowUpRight,
@@ -16,18 +17,20 @@ import {
   HeartPulse,
 } from "lucide-react";
 
+import cardilogy from "@/assets/cardiology.jpg";
+
 /* =========================================================
    CONFERENCE DATA
 ========================================================= */
 
 const CONFERENCE = {
-  slug: "world-health-congress-women-health-gynecology",
-  title: "World Health Congress on Women Health and Gynecology",
-  year: "2026",
-  date: "Feb 24–25, 2026",
-  edition: "Women’s Health & Gynecology",
-  image:
-    "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1400&q=85",
+  slug: "international-conference-on-cardiology",
+  title: "International Conference on Cardiology",
+  year: "2027",
+  date: "March 11–12, 2027",
+  edition: "Cardiology",
+  location: "International",
+  image: cardilogy,
 };
 
 /* =========================================================
@@ -35,30 +38,31 @@ const CONFERENCE = {
 ========================================================= */
 
 const CONFERENCE_THEMES = [
-  "Women’s Health & Wellness",
-  "Obstetrics & Gynecology",
-  "Maternal & Reproductive Health",
-  "Gynecological Disorders & Care",
-  "Women’s Cancer & Prevention",
-  "Reproductive Medicine & Fertility",
+  "Clinical Cardiology & Cardiovascular Medicine",
+  "Coronary Artery Disease & Acute Coronary Syndromes",
+  "Heart Failure & Cardiomyopathies",
+  "Interventional Cardiology & Cardiac Catheterization",
+  "Arrhythmias & Electrophysiology",
+  "Hypertension & Cardiovascular Risk Management",
+  "Preventive Cardiology & Heart Health",
+  "Cardiac Imaging & Diagnostic Technologies",
 ];
 
 /* =========================================================
    PAGE
 ========================================================= */
 
-export default function WomenHealthGynecology() {
+export default function Cardiology() {
   return (
     <>
       <Helmet>
         <title>
-          World Health Congress on Women Health and Gynecology — PulseCon
-          Global
+          International Conference on Cardiology — PulseCon Global
         </title>
 
         <meta
           name="description"
-          content="Explore the World Health Congress on Women Health and Gynecology 2026, bringing together healthcare professionals, researchers and experts to advance women's health, gynecology, maternal care and reproductive medicine."
+          content="Explore the International Conference on Cardiology 2027, bringing together cardiologists, physicians, researchers, clinicians and cardiovascular healthcare professionals to exchange knowledge and advance the future of cardiovascular medicine."
         />
       </Helmet>
 
@@ -68,10 +72,10 @@ export default function WomenHealthGynecology() {
 
       <div className="relative">
         <PageHero
-          eyebrow={`Previous Conference · ${CONFERENCE.year}`}
-          title="World Health Congress on"
-          accent="Women Health & Gynecology."
-          body="A global platform connecting gynecologists, obstetricians, researchers and healthcare professionals to exchange knowledge, explore advances in women's health and shape the future of gynecological and reproductive care."
+          eyebrow={`Upcoming Conference · ${CONFERENCE.year}`}
+          title="International Conference"
+          accent="on Cardiology."
+          body="A global platform bringing together cardiologists, physicians, researchers, clinicians and cardiovascular healthcare professionals to exchange knowledge, explore emerging innovations and advance the future of cardiovascular medicine."
         />
 
         {/* HERO IMAGE */}
@@ -80,7 +84,7 @@ export default function WomenHealthGynecology() {
           className="
             pointer-events-none
             absolute
-            right-6
+            right-5
             bottom-[-115px]
             w-[190px]
 
@@ -92,11 +96,11 @@ export default function WomenHealthGynecology() {
             md:top-[68%]
             md:w-[310px]
 
-            lg:right-[6%]
+            lg:right-[2%]
             lg:top-[58%]
             lg:w-[500px]
 
-            xl:right-[6%]
+            xl:right-[2%]
             xl:top-[58%]
             xl:w-[570px]
 
@@ -129,8 +133,6 @@ export default function WomenHealthGynecology() {
 
       <Section>
         <div className="grid gap-6 md:grid-cols-3">
-          {/* DATE */}
-
           <Reveal>
             <Card className="h-full">
               <div className="flex items-start gap-4">
@@ -150,8 +152,6 @@ export default function WomenHealthGynecology() {
               </div>
             </Card>
           </Reveal>
-
-          {/* EDITION */}
 
           <Reveal delay={0.1}>
             <Card className="h-full">
@@ -173,8 +173,6 @@ export default function WomenHealthGynecology() {
             </Card>
           </Reveal>
 
-          {/* COMMUNITY */}
-
           <Reveal delay={0.2}>
             <Card className="h-full">
               <div className="flex items-start gap-4">
@@ -188,7 +186,7 @@ export default function WomenHealthGynecology() {
                   </p>
 
                   <p className="mt-2 font-heading text-lg font-semibold">
-                    Women’s Health & Care
+                    Cardiology
                   </p>
                 </div>
               </div>
@@ -206,8 +204,8 @@ export default function WomenHealthGynecology() {
           <Heading
             eyebrow="About The Conference"
             title="Connecting expertise."
-            accent="Advancing women’s health."
-            body="The World Health Congress on Women Health and Gynecology brought together gynecologists, obstetricians, clinicians, researchers and healthcare professionals to explore developments in women's health, reproductive medicine and innovative approaches to patient care."
+            accent="Advancing cardiovascular care."
+            body="The International Conference on Cardiology brings together cardiologists, physicians, researchers, clinicians and cardiovascular healthcare professionals to exchange knowledge, discuss emerging developments and explore innovative approaches in cardiovascular medicine."
           />
 
           <Reveal delay={0.1}>
@@ -216,29 +214,32 @@ export default function WomenHealthGynecology() {
 
               <div className="relative">
                 <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-gold">
-                  A Global Scientific Platform
+                  A Global Cardiology Platform
                 </p>
 
                 <h3 className="mt-3 font-heading text-3xl font-semibold">
-                  Advancing women’s health
+                  Knowledge that
                   <span className="block text-gradient">
-                    through knowledge & care.
+                    shapes better cardiovascular care.
                   </span>
                 </h3>
 
                 <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
-                  The congress encouraged scientific exchange across
-                  obstetrics, gynecology and women's healthcare, with
-                  discussions focused on maternal health, reproductive
-                  medicine, gynecological disorders, prevention and the
-                  future of personalized patient care.
+                  The conference provides a platform for meaningful scientific
+                  discussion across clinical cardiology, interventional
+                  cardiology, heart failure, electrophysiology, cardiovascular
+                  imaging, preventive cardiology and cardiovascular risk
+                  management. Through expert perspectives and collaborative
+                  conversations, participants can explore emerging approaches
+                  to diagnosis, treatment and prevention.
                 </p>
 
                 <div className="mt-6 flex items-center gap-3 border-t border-border/60 pt-6">
                   <CheckCircle2 className="h-5 w-5 text-primary" />
 
                   <span className="text-sm font-medium">
-                    Connecting research with compassionate clinical care
+                    Advancing cardiovascular healthcare through global
+                    collaboration
                   </span>
                 </div>
               </div>
@@ -255,20 +256,20 @@ export default function WomenHealthGynecology() {
         <Heading
           eyebrow="Scientific Themes"
           title="Focused conversations."
-          accent="Across women’s health & gynecology."
+          accent="Across cardiology & cardiovascular medicine."
           align="center"
-          body="The scientific programme explored key areas shaping women's health, reproductive medicine, gynecology, maternal care and preventive healthcare."
+          body="The scientific programme explores key areas shaping modern cardiology, cardiovascular medicine, diagnostic technologies and the future of heart health."
         />
 
         <Reveal delay={0.1}>
           <Card className="mx-auto mt-14 max-w-5xl overflow-hidden p-0">
-            <div className="border-b border-border/30 bg-muted/20 px-6 py-6 sm:px-8">
+            <div className="border-b border-border/70 bg-muted/20 px-6 py-6 sm:px-8">
               <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-gold">
                 Key Areas
               </p>
 
               <h3 className="mt-2 font-heading text-2xl font-semibold">
-                Women’s Health & Gynecology
+                Cardiology
                 <span className="block text-gradient">
                   Scientific Focus
                 </span>
@@ -304,10 +305,10 @@ export default function WomenHealthGynecology() {
       <Section veil>
         <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <Reveal>
-            <div className="relative overflow-hidden rounded-2xl border border-border/30">
+            <div className="relative overflow-hidden rounded-2xl border border-border/70">
               <img
                 src={CONFERENCE.image}
-                alt="World Health Congress on Women Health and Gynecology"
+                alt="International Conference on Cardiology"
                 className="aspect-[16/11] w-full object-cover"
                 loading="lazy"
               />
@@ -320,7 +321,7 @@ export default function WomenHealthGynecology() {
                 </p>
 
                 <p className="mt-2 font-heading text-xl font-semibold text-white sm:text-2xl">
-                  World Health Congress on Women Health and Gynecology
+                  International Conference on Cardiology
                 </p>
               </div>
             </div>
@@ -328,15 +329,15 @@ export default function WomenHealthGynecology() {
 
           <Heading
             eyebrow="Conference Impact"
-            title="From research"
-            accent="to healthier women."
-            body="By bringing together scientific expertise, clinical perspectives and emerging approaches in women's healthcare, the congress encouraged collaboration and knowledge exchange to improve gynecological care, reproductive health and women's wellbeing."
+            title="From knowledge"
+            accent="to better heart health."
+            body="By connecting scientific expertise with clinical perspectives and emerging innovations, the conference creates opportunities to exchange ideas, strengthen professional networks and contribute to the continued advancement of cardiovascular medicine and patient care."
           />
         </div>
       </Section>
 
       {/* =====================================================
-          BACK TO PREVIOUS CONFERENCES
+          BACK TO UPCOMING CONFERENCES
       ===================================================== */}
 
       <Section>
@@ -344,8 +345,8 @@ export default function WomenHealthGynecology() {
           <Heading
             eyebrow="The Journey Continues"
             title="Explore more"
-            accent="PulseCon memories."
-            body="Discover other previous PulseCon Global conferences and revisit the conversations, ideas and connections that continue to shape our global healthcare community."
+            accent="PulseCon Global events."
+            body="Discover other upcoming PulseCon Global conferences and explore the conversations, ideas and connections shaping the future of healthcare."
           />
 
           <Reveal delay={0.1}>
@@ -354,29 +355,26 @@ export default function WomenHealthGynecology() {
 
               <div className="relative">
                 <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-gold">
-                  Previous Conferences
+                  Upcoming Conferences
                 </p>
 
                 <h3 className="mt-3 font-heading text-3xl font-semibold">
                   Discover more
                   <span className="block text-gradient">
-                    global editions.
+                    global events.
                   </span>
                 </h3>
 
                 <p className="mt-4 max-w-lg text-sm leading-relaxed text-muted-foreground">
-                  Explore previous PulseCon Global editions and discover the
-                  knowledge, connections and experiences that shaped our
-                  journey.
+                  Explore upcoming PulseCon Global editions and discover new
+                  opportunities to learn, connect and shape the future of
+                  healthcare.
                 </p>
 
                 <div className="mt-7 flex flex-wrap gap-3">
-                  <ButtonLink
-                    to="/conferences/previous"
-                    size="lg"
-                  >
+                  <ButtonLink to="/conferences/upcoming" size="lg">
                     <ArrowLeft className="h-4 w-4" />
-                    Previous Conferences
+                    Upcoming Conferences
                   </ButtonLink>
                 </div>
               </div>

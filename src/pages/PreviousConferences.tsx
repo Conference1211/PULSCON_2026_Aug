@@ -2,8 +2,7 @@ import { Helmet } from "@/components/Seo";
 import { PageHero } from "@/components/sections/Hero";
 import { Link } from "react-router-dom";
 import previousConferencesImage from "@/assets/previous-conferences.png";
-import InfectiousDiseases from "@/pages/InfectiousDiseases";
-import NeurologyNeuroscience from "@/pages/NeurologyNeuroscience";
+
 import {
   Section,
   Heading,
@@ -374,41 +373,45 @@ export default function PreviousConferences() {
   >
     <Card className="group overflow-hidden p-0 transition-all duration-500 hover:-translate-y-1">
                 {/* IMAGE */}
-                <div className="relative aspect-[16/10] overflow-hidden">
-                  <img
-                    src={conference.image}
-                    alt={`${conference.title} — ${conference.year}`}
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    loading="lazy"
-                  />
+                {/* IMAGE */}
+<div className="relative aspect-[16/10] overflow-hidden">
 
-                  {/* IMAGE OVERLAY */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/20 to-transparent" />
+  <img
+    src={conference.image}
+    alt={`${conference.title} — ${conference.year}`}
+    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+    loading="lazy"
+  />
 
-                  {/* YEAR */}
-                  <div className="absolute left-5 top-5">
-                    <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-background/70 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-gold backdrop-blur-md">
-                      <CalendarDays className="h-3.5 w-3.5" />
-                      {conference.year}
-                    </span>
-                  </div>
+  {/* STRONG OVERLAY FOR BOTH LIGHT & DARK MODE */}
+  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/10" />
 
-                  {/* ARROW */}
-                  <div className="absolute right-5 top-5 grid h-10 w-10 place-items-center rounded-full border border-white/20 bg-background/60 opacity-0 backdrop-blur-md transition-all duration-300 group-hover:opacity-100">
-                    <ArrowUpRight className="h-4 w-4 text-white" />
-                  </div>
+  {/* YEAR */}
+  <div className="absolute left-5 top-5">
+    <span className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-black/55 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-gold backdrop-blur-md">
+      <CalendarDays className="h-3.5 w-3.5" />
+      {conference.year}
+    </span>
+  </div>
 
-                  {/* IMAGE TEXT */}
-                  <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
-                    <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-gold">
-                      {conference.edition}
-                    </p>
+  {/* ARROW */}
+  <div className="absolute right-5 top-5 grid h-10 w-10 place-items-center rounded-full border border-white/25 bg-black/55 opacity-0 backdrop-blur-md transition-all duration-300 group-hover:opacity-100">
+    <ArrowUpRight className="h-4 w-4 text-white" />
+  </div>
 
-                    <h3 className="mt-2 font-heading text-2xl font-semibold text-white sm:text-3xl">
-                      {conference.title}
-                    </h3>
-                  </div>
-                </div>
+  {/* IMAGE TEXT */}
+  <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
+
+    <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-gold">
+      {conference.edition}
+    </p>
+
+    <h3 className="mt-2 font-heading text-2xl font-semibold leading-tight text-white drop-shadow-lg sm:text-3xl">
+      {conference.title}
+    </h3>
+
+  </div>
+</div>
 
                 {/* CARD FOOTER */}
                 <div className="flex items-center justify-between px-5 py-4 sm:px-6">
@@ -550,10 +553,10 @@ export default function PreviousConferences() {
                       </span>
 
                       <span className="text-sm leading-relaxed text-muted-foreground transition-colors duration-200 group-hover:text-foreground">
-                        {topic}
-                      </span>
+  {topic}
+</span>
 
-                      <ArrowUpRight className="ml-auto mt-0.5 h-3.5 w-3.5 shrink-0 text-primary opacity-0 transition-all duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:opacity-100" />
+                      
                     </div>
                   ))}
                 </div>
@@ -602,7 +605,7 @@ export default function PreviousConferences() {
                         {subject}
                       </span>
 
-                      <ArrowUpRight className="ml-auto mt-0.5 h-3.5 w-3.5 shrink-0 text-primary opacity-0 transition-all duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:opacity-100" />
+                      
                     </div>
                   ))}
                 </div>

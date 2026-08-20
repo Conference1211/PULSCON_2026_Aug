@@ -123,14 +123,14 @@ export default function InfectiousDiseases() {
               className="aspect-[16/10] w-full rounded-xl object-cover"
             />
 
-            <div className="absolute inset-x-2 bottom-2 rounded-b-xl bg-gradient-to-t from-background/95 via-background/50 to-transparent p-5 pt-12">
+            <div className="absolute inset-x-2 bottom-2 rounded-b-xl bg-gradient-to-t from-black/80 via-black/40 to-transparent p-5 pt-12">
               <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-gold">
                 {CONFERENCE.edition}
               </p>
 
-              <p className="mt-1 text-sm font-medium text-white">
-                PulseCon Global · {CONFERENCE.year}
-              </p>
+              <p className="mt-1 text-sm font-medium text-foreground dark:text-white">
+  PulseCon Global · {CONFERENCE.year}
+</p>
             </div>
           </div>
         </div>
@@ -233,7 +233,7 @@ export default function InfectiousDiseases() {
                   </span>
                 </h3>
 
-                <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
+                <p className="mt-5 text-sm leading-relaxed text-foreground">
                   The conference provided a platform for meaningful scientific
                   discussion around emerging infectious diseases, prevention,
                   diagnostics, treatment, antimicrobial resistance and public
@@ -294,7 +294,7 @@ export default function InfectiousDiseases() {
                     {String(index + 1).padStart(2, "0")}
                   </span>
 
-                  <span className="text-sm leading-relaxed text-muted-foreground transition-colors duration-200 group-hover:text-foreground">
+                  <span className="text-sm leading-relaxed text-foreground transition-colors duration-200">
                     {theme}
                   </span>
 
@@ -327,7 +327,7 @@ export default function InfectiousDiseases() {
                 loading="lazy"
               />
 
-              <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 
               <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
                 <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-gold">
@@ -379,7 +379,7 @@ export default function InfectiousDiseases() {
                   </span>
                 </h3>
 
-                <p className="mt-4 max-w-lg text-sm leading-relaxed text-muted-foreground">
+                <p className="mt-4 max-w-lg text-sm leading-relaxed text-foreground">
                   Explore previous PulseCon Global editions and discover the
                   knowledge, connections and experiences that shaped our
                   journey.

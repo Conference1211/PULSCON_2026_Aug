@@ -21,6 +21,12 @@ import NeurologyNeuroscience from "@/pages/NeurologyNeuroscience";
 import COPDAndLungHealth from "@/pages/COPDAndLungHealth";
 import WomenHealthGynecology from "@/pages/WomenHealthGynecology";
 import NanoscienceNanotechnology from "@/pages/NanoscienceNanotechnology";
+import DentalOralHealth from "@/pages/DentalOralHealth";
+import PsychiatryAndMentalHealth from "@/pages/PsychiatryAndMentalHealth";
+import COPDAndLungsHealth from "@/pages/COPDAndLungsHealth";
+import Cardiology from "@/pages/Cardiology";
+import DiabetesAndPediatricEndocrinology from "@/pages/DiabetesAndPediatricEndocrinology";
+import WomenHealthGynecology2027 from "@/pages/WomenHealthGynecology2027";
 
 export default function App() {
   return (
@@ -72,6 +78,31 @@ export default function App() {
             path="/previous-conferences/global-summit-nanoscience-nanotechnology"
             element={<NanoscienceNanotechnology />}
           />
+          <Route
+  path="/upcoming-conferences/international-conference-on-dental-and-oral-health"
+  element={<DentalOralHealth />}
+/>
+<Route
+  path="/upcoming-conferences/international-conference-on-psychiatry-and-mental-health"
+  element={<PsychiatryAndMentalHealth />}
+/>
+<Route
+  path="/upcoming-conferences/international-conference-on-copd-and-lung-health"
+  element={<COPDAndLungsHealth />}
+/>
+<Route
+  path="/upcoming-conferences/international-conference-on-cardiology"
+  element={<Cardiology />}
+/>
+
+<Route
+  path="/upcoming-conferences/world-congress-on-diabetes-and-pediatric-endocrinology"
+  element={<DiabetesAndPediatricEndocrinology />}
+/>
+<Route
+  path="/upcoming-conferences/world-health-congress-on-women-health-and-gynecology"
+  element={<WomenHealthGynecology2027 />}
+/>
 
           {/* Main Pages */}
 

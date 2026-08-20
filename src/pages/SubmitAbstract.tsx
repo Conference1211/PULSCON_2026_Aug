@@ -6,10 +6,7 @@ import {
   CheckCircle2,
   FileUp,
   Download,
-  ShieldCheck,
-  Clock3,
   FileText,
-  Users,
 } from "lucide-react";
 
 import { PageHero } from "@/components/sections/Hero";
@@ -32,8 +29,13 @@ import {
 
 import { cn } from "@/lib/utils";
 
+/* =========================================================
+   FORM FIELD STYLE
+   Dark + Light mode compatible
+========================================================= */
+
 const field =
-  "w-full rounded-xl border border-[#CBD5E1] bg-white px-4 py-3 text-sm font-medium text-[#07111F] outline-none transition-all placeholder:text-[#64748B] shadow-sm focus:border-[#0B5ED7] focus:ring-2 focus:ring-[#0B5ED7]/10";
+  "w-full rounded-xl border border-border bg-background px-4 py-3 text-sm font-medium text-foreground outline-none transition-all placeholder:text-muted-foreground shadow-sm focus:border-primary focus:ring-2 focus:ring-primary/10";
 
 /* =========================================================
    ABSTRACT FORM
@@ -47,6 +49,7 @@ function AbstractForm() {
     <form
       onSubmit={(e) => {
         e.preventDefault();
+
         setSent(true);
 
         window.setTimeout(() => {
@@ -59,8 +62,7 @@ function AbstractForm() {
         rounded-[28px]
         border
         border-border
-        bg-[#F8FAFC]
-        border-[#D8E5F7]
+        bg-card
         p-6
         shadow-[0_20px_60px_-20px_rgba(7,17,31,0.18)]
         ring-1
@@ -68,7 +70,10 @@ function AbstractForm() {
         sm:p-8
       "
     >
-      {/* FORM HEADER */}
+      {/* =====================================================
+          FORM HEADER
+      ===================================================== */}
+
       <div className="mb-7 border-b border-border/60 pb-6">
         <div className="flex items-start justify-between gap-4">
           <div>
@@ -76,9 +81,9 @@ function AbstractForm() {
               Abstract Submission
             </p>
 
-            <h2 className="mt-2 font-display text-2xl font-bold tracking-tight text-[#07111F] sm:text-3xl">
-  Submit your research
-</h2>
+            <h2 className="mt-2 font-display text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+              Submit your research
+            </h2>
 
             <p className="mt-2 max-w-xl text-sm leading-relaxed text-muted-foreground">
               Complete the form below and upload your anonymised abstract for
@@ -86,6 +91,7 @@ function AbstractForm() {
             </p>
           </div>
 
+          {/* ICON */}
           <div
             className="
               grid
@@ -103,11 +109,29 @@ function AbstractForm() {
           </div>
         </div>
 
-        {/* DOWNLOAD TEMPLATE */}
-        <div className="mt-6 flex flex-wrap items-center justify-between gap-3 rounded-xl border border-[#0B5ED7]/15 bg-[#F8FAFC] px-4 py-3">
-          <span className="text-sm font-medium text-[#07111F]">
-  Download Abstract template here
-</span>
+        {/* =====================================================
+            DOWNLOAD TEMPLATE
+        ===================================================== */}
+
+        <div
+          className="
+            mt-6
+            flex
+            flex-wrap
+            items-center
+            justify-between
+            gap-3
+            rounded-xl
+            border
+            border-primary/15
+            bg-primary/[0.04]
+            px-4
+            py-3
+          "
+        >
+          <span className="text-sm font-medium text-foreground">
+            Download Abstract template here
+          </span>
 
           <button
             type="button"
@@ -127,6 +151,7 @@ function AbstractForm() {
             "
           >
             Download
+
             <Download className="h-3.5 w-3.5" />
           </button>
         </div>
@@ -137,12 +162,15 @@ function AbstractForm() {
         </p>
       </div>
 
-      {/* FORM FIELDS */}
-      <div className="grid gap-5 sm:grid-cols-2">
+      {/* =====================================================
+          FORM FIELDS
+      ===================================================== */}
 
+      <div className="grid gap-5 sm:grid-cols-2">
         {/* TITLE */}
+
         <label className="grid gap-2">
-          <span className="text-xs font-semibold text-[#07111F]">
+          <span className="text-xs font-semibold text-foreground">
             Title <span className="text-destructive">*</span>
           </span>
 
@@ -155,6 +183,7 @@ function AbstractForm() {
             <option value="" disabled>
               Select Title
             </option>
+
             <option>Dr.</option>
             <option>Prof.</option>
             <option>Mr.</option>
@@ -164,8 +193,9 @@ function AbstractForm() {
         </label>
 
         {/* FIRST NAME */}
+
         <label className="grid gap-2">
-          <span className="text-xs font-semibold text-[#07111F]">
+          <span className="text-xs font-semibold text-foreground">
             First Name <span className="text-destructive">*</span>
           </span>
 
@@ -178,8 +208,9 @@ function AbstractForm() {
         </label>
 
         {/* LAST NAME */}
+
         <label className="grid gap-2">
-          <span className="text-xs font-semibold text-[#07111F]">
+          <span className="text-xs font-semibold text-foreground">
             Last Name
           </span>
 
@@ -191,8 +222,9 @@ function AbstractForm() {
         </label>
 
         {/* COUNTRY */}
+
         <label className="grid gap-2">
-          <span className="text-xs font-semibold text-[#07111F]">
+          <span className="text-xs font-semibold text-foreground">
             Country <span className="text-destructive">*</span>
           </span>
 
@@ -205,6 +237,7 @@ function AbstractForm() {
             <option value="" disabled>
               Select country
             </option>
+
             <option>India</option>
             <option>Switzerland</option>
             <option>United Kingdom</option>
@@ -218,8 +251,9 @@ function AbstractForm() {
         </label>
 
         {/* EMAIL */}
+
         <label className="grid gap-2">
-          <span className="text-xs font-semibold text-[#07111F]">
+          <span className="text-xs font-semibold text-foreground">
             Author's Email <span className="text-destructive">*</span>
           </span>
 
@@ -233,8 +267,9 @@ function AbstractForm() {
         </label>
 
         {/* PHONE */}
+
         <label className="grid gap-2">
-          <span className="text-xs font-semibold text-[#07111F]">
+          <span className="text-xs font-semibold text-foreground">
             Phone Number <span className="text-destructive">*</span>
           </span>
 
@@ -248,8 +283,9 @@ function AbstractForm() {
         </label>
 
         {/* ABSTRACT CATEGORY */}
+
         <label className="grid gap-2">
-          <span className="text-xs font-semibold text-[#07111F]">
+          <span className="text-xs font-semibold text-foreground">
             Abstract Category <span className="text-destructive">*</span>
           </span>
 
@@ -267,8 +303,9 @@ function AbstractForm() {
         </label>
 
         {/* TRACK */}
+
         <label className="grid gap-2">
-          <span className="text-xs font-semibold text-[#07111F]">
+          <span className="text-xs font-semibold text-foreground">
             Track Name <span className="text-destructive">*</span>
           </span>
 
@@ -291,8 +328,9 @@ function AbstractForm() {
         </label>
 
         {/* POSTAL ADDRESS */}
+
         <label className="grid gap-2 sm:col-span-2">
-          <span className="text-xs font-semibold text-[#07111F]">
+          <span className="text-xs font-semibold text-foreground">
             Full Postal Address
           </span>
 
@@ -305,8 +343,9 @@ function AbstractForm() {
         </label>
 
         {/* ABSTRACT */}
+
         <label className="grid gap-2 sm:col-span-2">
-          <span className="text-xs font-semibold text-[#07111F]">
+          <span className="text-xs font-semibold text-foreground">
             Structured Abstract{" "}
             <span className="text-muted-foreground">
               (Maximum 400 words)
@@ -323,10 +362,14 @@ function AbstractForm() {
           />
         </label>
 
-        {/* FILE UPLOAD */}
+        {/* =====================================================
+            FILE UPLOAD
+        ===================================================== */}
+
         <div className="sm:col-span-2">
-          <p className="mb-2 text-xs font-semibold text-[#07111F]">
-            Attach your file <span className="text-destructive">*</span>
+          <p className="mb-2 text-xs font-semibold text-foreground">
+            Attach your file{" "}
+            <span className="text-destructive">*</span>
           </p>
 
           <label
@@ -339,13 +382,13 @@ function AbstractForm() {
               rounded-2xl
               border
               border-dashed
-              border-border/80
-              bg-[#F1F6FF]
+              border-border
+              bg-primary/[0.04]
               px-5
               py-5
               transition-all
               hover:border-primary/60
-              hover:bg-primary/[0.03]
+              hover:bg-primary/[0.07]
             "
           >
             <motion.span
@@ -365,7 +408,7 @@ function AbstractForm() {
             </motion.span>
 
             <div className="min-w-0">
-              <p className="truncate text-sm font-semibold">
+              <p className="truncate text-sm font-semibold text-foreground">
                 {fileName ?? "Choose your abstract file"}
               </p>
 
@@ -387,15 +430,23 @@ function AbstractForm() {
           </label>
         </div>
 
-      
+        {/* =====================================================
+            CONSENT
+        ===================================================== */}
 
-        {/* CONSENT */}
         <label className="flex items-start gap-3 text-sm text-muted-foreground sm:col-span-2">
           <input
             required
             type="checkbox"
             name="consent"
-            className="mt-1 h-4 w-4 rounded border-border"
+            className="
+              mt-1
+              h-4
+              w-4
+              rounded
+              border-border
+              accent-primary
+            "
           />
 
           <span>
@@ -406,22 +457,35 @@ function AbstractForm() {
         </label>
       </div>
 
-      {/* SUBMIT */}
+      {/* =====================================================
+          SUBMIT
+      ===================================================== */}
+
       <div className="mt-7 flex flex-wrap items-center gap-4">
         <Button type="submit" size="lg">
           Submit Abstract
+
           <ArrowRight className="h-4 w-4" />
         </Button>
 
         <AnimatePresence>
           {sent ? (
             <motion.span
-              initial={{ opacity: 0, x: -8 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0 }}
+              initial={{
+                opacity: 0,
+                x: -8,
+              }}
+              animate={{
+                opacity: 1,
+                x: 0,
+              }}
+              exit={{
+                opacity: 0,
+              }}
               className="flex items-center gap-2 text-sm text-accent"
             >
               <CheckCircle2 className="h-4 w-4" />
+
               Submission received successfully.
             </motion.span>
           ) : null}
@@ -447,14 +511,16 @@ function SubmissionInstructions() {
 
   return (
     <div className="lg:sticky lg:top-28">
-      {/* INSTRUCTIONS CARD */}
+      {/* =====================================================
+          INSTRUCTIONS CARD
+      ===================================================== */}
+
       <div
         className="
           rounded-[28px]
           border
           border-border
-          bg-white
-          border-[#E2E8F0]
+          bg-card
           p-6
           shadow-[0_20px_60px_-25px_rgba(7,17,31,0.14)]
           ring-1
@@ -464,23 +530,35 @@ function SubmissionInstructions() {
       >
         <Badge tone="gold">Submission Instructions</Badge>
 
-        <h2 className="mt-4 font-display text-3xl font-semibold tracking-tight text-[#07111F]">
+        <h2 className="mt-4 font-display text-3xl font-semibold tracking-tight text-foreground">
           Before you submit
         </h2>
 
-        <p className="mt-3 text-sm leading-relaxed text-[#07111F]">
+        <p className="mt-3 text-sm leading-relaxed text-foreground">
           Please review these requirements carefully before completing the
           submission form.
         </p>
+
+        {/* INSTRUCTIONS */}
 
         <div className="mt-6 space-y-4">
           {instructions.map((item, index) => (
             <motion.div
               key={item}
-              initial={{ opacity: 0, x: 10 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.05 }}
+              initial={{
+                opacity: 0,
+                x: 10,
+              }}
+              whileInView={{
+                opacity: 1,
+                x: 0,
+              }}
+              viewport={{
+                once: true,
+              }}
+              transition={{
+                delay: index * 0.05,
+              }}
               className="flex items-start gap-3"
             >
               <span
@@ -505,8 +583,6 @@ function SubmissionInstructions() {
             </motion.div>
           ))}
         </div>
-
-        
       </div>
     </div>
   );
@@ -540,19 +616,30 @@ export default function SubmitAbstract() {
         />
 
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="/submit-abstract" />
-        <meta name="twitter:card" content="summary_large_image" />
+
+        <meta
+          property="og:url"
+          content="/submit-abstract"
+        />
+
+        <meta
+          name="twitter:card"
+          content="summary_large_image"
+        />
 
         <meta
           name="twitter:title"
           content="Submit an Abstract — PulseCon Global 2026"
         />
 
-        <link rel="canonical" href="/submit-abstract" />
+        <link
+          rel="canonical"
+          href="/submit-abstract"
+        />
       </Helmet>
 
       {/* =====================================================
-          HERO + IMAGE
+          HERO + VIDEO
       ===================================================== */}
 
       <div className="relative overflow-visible">
@@ -563,50 +650,45 @@ export default function SubmitAbstract() {
           body="PulseCon Global 2026 accepts original work across six research categories. Every abstract is reviewed double-blind by three independent reviewers, and accepted work is published with a citable DOI."
         />
 
-        {/* HERO IMAGE */}
         {/* HERO VIDEO */}
-<video
-  src={abstractVideo}
-  autoPlay
-  loop
-  muted
-  playsInline
-  aria-label="Medical research and abstract submission"
-  className="
-    pointer-events-none
-    absolute
-    z-10
-    object-contain
 
-    /* MOBILE */
-    right-0
-    bottom-[-130px]
-    w-[200px]
+        <video
+          src={abstractVideo}
+          autoPlay
+          loop
+          muted
+          playsInline
+          aria-label="Medical research and abstract submission"
+          className="
+            pointer-events-none
+            absolute
+            z-10
+            object-contain
 
-    /* SMALL TABLET */
-    sm:right-[-20px]
-    sm:bottom-[-110px]
-    sm:w-[300px]
+            right-0
+            bottom-[-130px]
+            w-[200px]
 
-    /* TABLET */
-    md:right-[-10px]
-    md:bottom-auto
-    md:top-[68%]
-    md:w-[390px]
+            sm:right-[-20px]
+            sm:bottom-[-110px]
+            sm:w-[300px]
 
-    /* DESKTOP */
-    lg:right-[4%]
-    lg:top-[55%]
-    lg:w-[500px]
+            md:right-[-10px]
+            md:bottom-auto
+            md:top-[68%]
+            md:w-[390px]
 
-    /* LARGE DESKTOP */
-    xl:right-[5%]
-    xl:top-[55%]
-    xl:w-[570px]
+            lg:right-[4%]
+            lg:top-[55%]
+            lg:w-[500px]
 
-    -translate-y-1/2
-  "
-/>
+            xl:right-[5%]
+            xl:top-[55%]
+            xl:w-[570px]
+
+            -translate-y-1/2
+          "
+        />
       </div>
 
       {/* =====================================================
@@ -615,17 +697,17 @@ export default function SubmitAbstract() {
 
       <Section className="pt-16 lg:pt-20">
         <div className="grid items-start gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-12">
-
           {/* LEFT — FORM */}
+
           <Reveal>
             <AbstractForm />
           </Reveal>
 
           {/* RIGHT — INSTRUCTIONS */}
+
           <Reveal delay={0.12}>
             <SubmissionInstructions />
           </Reveal>
-
         </div>
       </Section>
 
@@ -645,14 +727,16 @@ export default function SubmitAbstract() {
           {ABSTRACT_PROCESS.map((p) => (
             <StaggerItem key={p.step}>
               <motion.div
-                whileHover={{ y: -8 }}
+                whileHover={{
+                  y: -8,
+                }}
                 className="glass gradient-border h-full rounded-3xl p-6"
               >
                 <p className="numeric text-3xl font-bold text-gradient">
                   {p.step}
                 </p>
 
-                <h3 className="mt-3 font-heading text-lg font-semibold">
+                <h3 className="mt-3 font-heading text-lg font-semibold text-foreground">
                   {p.title}
                 </h3>
 

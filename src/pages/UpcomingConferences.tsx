@@ -1,5 +1,10 @@
 import { Helmet } from "@/components/Seo";
 import { PageHero } from "@/components/sections/Hero";
+import { Link } from "react-router-dom";
+import Diabetes1 from "@/assets/Diabetes1.jpg";
+import cardilogy from "@/assets/cardiology.jpg";
+import gyenicology from "@/assets/gyenicology.jpeg";
+import lungs from "@/assets/lungs.jpg";
 import {
   Section,
   Heading,
@@ -23,6 +28,7 @@ import {
 
 const UPCOMING_CONFERENCES = [
   {
+    slug: "international-conference-on-dental-and-oral-health",
     title: "International Conference on Dental and Oral Health",
     year: "2026",
     date: "December 3–4, 2026",
@@ -32,6 +38,7 @@ const UPCOMING_CONFERENCES = [
       "https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=1400&q=85",
   },
   {
+    slug: "international-conference-on-psychiatry-and-mental-health",
     title: "International Conference on Psychiatry and Mental Health",
     year: "2026",
     date: "November 12–13, 2026",
@@ -41,40 +48,40 @@ const UPCOMING_CONFERENCES = [
       "https://images.unsplash.com/photo-1474418397713-7ede21d49118?auto=format&fit=crop&w=1400&q=85",
   },
   {
+    slug: "international-conference-on-copd-and-lung-health",
     title: "International Conference on COPD and Lung Health",
     year: "2027",
     date: "February 15–16, 2027",
     edition: "COPD & Lung Health",
     location: "International",
-    image:
-      "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=1400&q=85",
+    image:lungs,
   },
   {
+    slug: "international-conference-on-cardiology",
     title: "International Conference on Cardiology",
     year: "2027",
     date: "March 11–12, 2027",
     edition: "Cardiology",
     location: "International",
-    image:
-      "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1400&q=85",
+    image:cardilogy,
   },
   {
+    slug: "world-congress-on-diabetes-and-pediatric-endocrinology",
     title: "World Congress on Diabetes and Pediatric Endocrinology",
     year: "2027",
     date: "March 30–31, 2027",
     edition: "Diabetes & Pediatric Endocrinology",
     location: "International",
-    image:
-      "https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=1400&q=85",
+    image: Diabetes1,
   },
   {
+    slug: "world-health-congress-on-women-health-and-gynecology",
     title: "World Health Congress on Women Health and Gynecology",
     year: "2027",
     date: "April 22–23, 2027",
     edition: "Women’s Health & Gynecology",
     location: "International",
-    image:
-      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1400&q=85",
+    image:gyenicology,
   },
 ];
 
@@ -173,45 +180,50 @@ export default function UpcomingConferences() {
         <Stagger className="mt-14 grid gap-7 md:grid-cols-2 xl:grid-cols-3">
           {UPCOMING_CONFERENCES.map((conference) => (
             <StaggerItem
-              key={`${conference.title}-${conference.year}`}
-            >
-              <Card className="group h-full overflow-hidden p-0 transition-all duration-500 hover:-translate-y-1">
+  key={`${conference.title}-${conference.year}`}
+>
+  <Link
+    to={`/upcoming-conferences/${conference.slug}`}
+    className="block h-full"
+  >
+    <Card className="group h-full overflow-hidden p-0 transition-all duration-500 hover:-translate-y-1">
                 {/* IMAGE */}
-                <div className="relative aspect-[16/10] overflow-hidden">
-                  <img
-                    src={conference.image}
-                    alt={`${conference.title} — ${conference.date}`}
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    loading="lazy"
-                  />
+                {/* IMAGE */}
+<div className="relative aspect-[16/10] overflow-hidden">
+  <img
+    src={conference.image}
+    alt={`${conference.title} — ${conference.date}`}
+    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+    loading="lazy"
+  />
 
-                  {/* IMAGE OVERLAY */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/20 to-transparent" />
+  {/* IMAGE OVERLAY */}
+  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/10" />
 
-                  {/* YEAR */}
-                  <div className="absolute left-5 top-5">
-                    <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-background/70 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-gold backdrop-blur-md">
-                      <CalendarDays className="h-3.5 w-3.5" />
-                      {conference.year}
-                    </span>
-                  </div>
+  {/* YEAR */}
+  <div className="absolute left-5 top-5">
+    <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/55 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-gold backdrop-blur-md">
+      <CalendarDays className="h-3.5 w-3.5" />
+      {conference.year}
+    </span>
+  </div>
 
-                  {/* ARROW */}
-                  <div className="absolute right-5 top-5 grid h-10 w-10 place-items-center rounded-full border border-white/20 bg-background/60 opacity-0 backdrop-blur-md transition-all duration-300 group-hover:opacity-100">
-                    <ArrowUpRight className="h-4 w-4 text-white" />
-                  </div>
+  {/* ARROW */}
+  <div className="absolute right-5 top-5 grid h-10 w-10 place-items-center rounded-full border border-white/20 bg-black/55 opacity-0 backdrop-blur-md transition-all duration-300 group-hover:opacity-100">
+    <ArrowUpRight className="h-4 w-4 text-white" />
+  </div>
 
-                  {/* IMAGE CONTENT */}
-                  <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-gold">
-                      {conference.edition}
-                    </p>
+  {/* IMAGE CONTENT */}
+  <div className="absolute bottom-0 left-0 right-0 p-6">
+    <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-gold">
+      {conference.edition}
+    </p>
 
-                    <h3 className="mt-2 font-heading text-2xl font-semibold leading-tight text-white">
-                      {conference.title}
-                    </h3>
-                  </div>
-                </div>
+    <h3 className="mt-2 font-heading text-2xl font-semibold leading-tight text-white">
+      {conference.title}
+    </h3>
+  </div>
+</div>
 
                 {/* CARD FOOTER */}
                 <div className="flex min-h-[100px] items-center justify-between gap-4 px-5 py-4 sm:px-6">
@@ -239,6 +251,7 @@ export default function UpcomingConferences() {
                   </span>
                 </div>
               </Card>
+              </Link>
             </StaggerItem>
           ))}
         </Stagger>
@@ -286,19 +299,17 @@ export default function UpcomingConferences() {
                 {/* TOPICS */}
                 <div className="mt-7 space-y-2">
                   {group.topics.map((topic) => (
-                    <div
-                      key={topic}
-                      className="group/item flex items-center gap-3 rounded-xl border border-border/50 bg-muted/20 px-3.5 py-3 transition-all duration-200 hover:bg-muted/40"
-                    >
-                      <span className="text-primary">›</span>
+  <div
+    key={topic}
+    className="group/item flex items-center gap-3 rounded-xl border border-border/50 bg-muted/20 px-3.5 py-3 transition-all duration-200 hover:bg-muted/40"
+  >
+    <span className="text-primary">›</span>
 
-                      <span className="text-sm text-muted-foreground transition-colors group-hover/item:text-foreground">
-                        {topic}
-                      </span>
-
-                      <ArrowUpRight className="ml-auto h-3.5 w-3.5 shrink-0 text-primary opacity-0 transition-all duration-200 group-hover/item:-translate-y-0.5 group-hover/item:translate-x-0.5 group-hover/item:opacity-100" />
-                    </div>
-                  ))}
+    <span className="text-sm text-muted-foreground transition-colors group-hover/item:text-foreground">
+      {topic}
+    </span>
+  </div>
+))}
                 </div>
 
                 {/* CARD ACTION */}
